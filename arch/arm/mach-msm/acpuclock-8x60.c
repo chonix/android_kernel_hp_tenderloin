@@ -56,10 +56,11 @@
 #define MAX_VDD_SC		1250000 /* uV */
 #define MAX_VDD_MEM		1250000 /* uV */
 #else
-#define MAX_VDD_SC		1350000 /* uV */
-#define MAX_VDD_MEM		1350000 /* uV */
+#define MIN_VDD_SC		700000 /* uV */
+#define MAX_VDD_SC		1400000 /* uV */
+#define MAX_VDD_MEM		1400000 /* uV */
 #endif
-#define MAX_VDD_DIG		1200000 /* uV */
+#define MAX_VDD_DIG		1300000 /* uV */
 #define MAX_AXI			 310500 /* KHz */
 #define SCPLL_LOW_VDD_FMAX	 594000 /* KHz */
 #define SCPLL_LOW_VDD		1000000 /* uV */
@@ -205,6 +206,7 @@ static struct clkctl_l2_speed l2_freq_tbl_v2[] = {
 #if defined(CONFIG_MSM_FORCE_MAX_CPU_TABLE)
 	[20] = {1458000,  1, 0x1B, 1200000, 1250000, 3},
 	[21] = {1512000,  1, 0x1C, 1200000, 1275000, 3},
+	[22] = {1566000,  1, 0x1D, 1225000, 1275000, 4},
 #endif
 };
 
@@ -352,13 +354,13 @@ static struct clkctl_acpu_speed acpu_freq_tbl_max[] = {
   { {1, 1}, 1296000,  ACPU_SCPLL, 0, 0, 1, 0x18, L2(17), 1125000, 0x03006000},
   { {1, 1}, 1350000,  ACPU_SCPLL, 0, 0, 1, 0x19, L2(18), 1150000, 0x03006000},
   { {1, 1}, 1404000,  ACPU_SCPLL, 0, 0, 1, 0x1A, L2(19), 1175000, 0x03006000},
-  { {1, 1}, 1458000,  ACPU_SCPLL, 0, 0, 1, 0x1B, L2(19), 1187500, 0x03006000},
-  { {1, 1}, 1512000,  ACPU_SCPLL, 0, 0, 1, 0x1C, L2(19), 1200000, 0x03006000},
-  { {1, 1}, 1566000,  ACPU_SCPLL, 0, 0, 1, 0x1D, L2(20), 1225000, 0x03006000},
-  { {1, 1}, 1620000,  ACPU_SCPLL, 0, 0, 1, 0x1E, L2(20), 1250000, 0x03006000},
-  { {1, 1}, 1674000,  ACPU_SCPLL, 0, 0, 1, 0x1F, L2(20), 1275000, 0x03006000},
-  { {1, 1}, 1728000,  ACPU_SCPLL, 0, 0, 1, 0x20, L2(21), 1300000, 0x03006000},
-  { {1, 1}, 1782000,  ACPU_SCPLL, 0, 0, 1, 0x21, L2(21), 1325000, 0x03006000},
+  { {1, 1}, 1458000,  ACPU_SCPLL, 0, 0, 1, 0x1B, L2(20), 1187500, 0x03006000},
+  { {1, 1}, 1512000,  ACPU_SCPLL, 0, 0, 1, 0x1C, L2(20), 1200000, 0x03006000},
+  { {1, 1}, 1566000,  ACPU_SCPLL, 0, 0, 1, 0x1D, L2(21), 1225000, 0x03006000},
+  { {1, 1}, 1620000,  ACPU_SCPLL, 0, 0, 1, 0x1E, L2(21), 1250000, 0x03006000},
+  { {1, 1}, 1674000,  ACPU_SCPLL, 0, 0, 1, 0x1F, L2(22), 1275000, 0x03006000},
+  { {1, 1}, 1728000,  ACPU_SCPLL, 0, 0, 1, 0x20, L2(22), 1300000, 0x03006000},
+  { {1, 1}, 1782000,  ACPU_SCPLL, 0, 0, 1, 0x21, L2(22), 1325000, 0x03006000},
   { {0, 0}, 0 },
 };
 #endif
