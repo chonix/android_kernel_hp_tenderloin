@@ -304,7 +304,7 @@ EXPORT_SYMBOL_GPL(cpufreq_notify_transition);
  *
  * This function is called everytime the CPU load is evaluated by the
  * ondemand governor. It notifies userspace of cpu load changes via sysfs.
- */
+*/ 
 void cpufreq_notify_utilization(struct cpufreq_policy *policy,
 		unsigned int util)
 {

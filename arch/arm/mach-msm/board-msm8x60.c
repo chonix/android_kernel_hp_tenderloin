@@ -126,6 +126,17 @@
 #include <linux/ion.h>
 #include <mach/ion.h>
 
+#ifdef CONFIG_CPU_FREQ_GOV_ONDEMAND_2_PHASE
+int set_two_phase_freq(int cpufreq);
+#endif
+
+#ifdef CONFIG_CPU_FREQ_GOV_BADASS_2_PHASE
+int set_two_phase_freq_badass(int cpufreq);
+#endif
+#ifdef CONFIG_CPU_FREQ_GOV_BADASS_3_PHASE
+int set_three_phase_freq_badass(int cpufreq);
+#endif
+
 #ifdef CONFIG_CHARGER_MAX8903
 #include <linux/max8903_charger.h>
 #include <linux/power_supply.h>
